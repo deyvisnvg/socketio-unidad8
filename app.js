@@ -6,13 +6,8 @@ const server = require("http").createServer(app);
 
 const io = require("socket.io")(server);
 
-// app.use(express.static(__dirname + 'public'));
 app.use(express.static(path.join(__dirname, "public")));
 app.use(express.static(path.join(__dirname, "views")));
-
-// app.get("/", (req, res) => {
-//     res.redirect("index.html")
-// })
 
 io.on('connection', socket => {
     console.log("A user connectado to the session")
